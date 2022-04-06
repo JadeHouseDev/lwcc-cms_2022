@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('member_infos', function (Blueprint $table) {
+        Schema::create('minitries', function (Blueprint $table) {
             $table->id();
-            $table->string('member_id', 20);
-            $table->string('dob');
-            $table->string('residential_address')->nullable();
-            $table->string('occupation')->nullable();
-            $table->string('comment')->nullable();
+            $table->string('ministry_id');
+            $table->string('name');
+            $table->string('alias')->nullable();
+            $table->string('type')->nullable();
             $table->boolean('active_status')->default(true);
             $table->timestamps();
             $table->softDeletes();
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('member_infos');
+        Schema::dropIfExists('minitries');
     }
 };

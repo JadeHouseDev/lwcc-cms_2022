@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('branch_masters', function (Blueprint $table) {
             $table->id();
+            $table->string('branch_id', 9);
+            $table->string('name');
+            $table->string('location')->nullable();
+            $table->string('phone')->nullable();
+            $table->boolean('active_status')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

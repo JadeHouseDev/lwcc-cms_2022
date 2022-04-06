@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('contribution_types', function (Blueprint $table) {
             $table->id();
+            $table->string('con_type_id', 20);
+            $table->tinyInteger('collected_by')->comment('Individual / Congregation');
+            $table->string('comment');
+            $table->boolean('active_status')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

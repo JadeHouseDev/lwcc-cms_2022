@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('member_masters', function (Blueprint $table) {
             $table->id();
+            $table->string('member_id', 20);
+            $table->string('member_other_names');
+            $table->string('member_surname');
+            $table->boolean('active_status')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

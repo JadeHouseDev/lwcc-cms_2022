@@ -15,7 +15,15 @@ return new class extends Migration
     {
         Schema::create('member_contributions', function (Blueprint $table) {
             $table->id();
+            $table->string('contrib_id');
+            $table->decimal('amount');
+            $table->string('member_id', 20);
+            $table->string('con_type_id', 20);
+            $table->integer('reprocess_count');
+            $table->string('comment');
+            $table->boolean('active_status')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
