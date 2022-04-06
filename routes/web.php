@@ -1,30 +1,17 @@
 <?php
 
+use App\Http\Controllers\BranchMasterController;
+use App\Http\Controllers\MemberMasterController;
+use App\Http\Controllers\MinistryController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::middleware('auth')->group(function () {
+    Route::get('/', function () { return view('homepage.index'); })->name('home');
 
-Route::get('/', function () {
-    return "Home";
-    // return view('welcome');
+    Route::resource('members', MemberMasterController::class);
+    Route::resource('ministries', MinistryController::class);
+    Route::resource('branches', BranchMasterController::class);
+
 });
-
-Route::get('/home', function(){
-    return view('homepage.index');
-})->name('home');
-
-Route::get('/dashboard', function () {
-    // return view('dashboard');
-    return view('homepage.index');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

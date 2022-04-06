@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MinitryMember;
+use App\Models\MinistryMember;
 use Illuminate\Http\Request;
 
-class MinitryMemberController extends Controller
+class MinistryMemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class MinitryMemberController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MinitryMember  $minitryMember
+     * @param  \App\Models\MinistryMember  $ministryMember
      * @return \Illuminate\Http\Response
      */
-    public function show(MinitryMember $minitryMember)
+    public function show(MinistryMember $ministryMember)
     {
         //
     }
@@ -52,10 +52,10 @@ class MinitryMemberController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MinitryMember  $minitryMember
+     * @param  \App\Models\MinistryMember  $ministryMember
      * @return \Illuminate\Http\Response
      */
-    public function edit(MinitryMember $minitryMember)
+    public function edit(MinistryMember $ministryMember)
     {
         //
     }
@@ -64,10 +64,10 @@ class MinitryMemberController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MinitryMember  $minitryMember
+     * @param  \App\Models\MinistryMember  $ministryMember
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MinitryMember $minitryMember)
+    public function update(Request $request, MinistryMember $ministryMember)
     {
         //
     }
@@ -75,10 +75,10 @@ class MinitryMemberController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MinitryMember  $minitryMember
+     * @param  \App\Models\MinistryMember  $ministryMember
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MinitryMember $minitryMember)
+    public function destroy(MinistryMember $ministryMember)
     {
         //
     }

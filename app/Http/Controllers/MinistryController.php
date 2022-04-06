@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Minitry;
+use App\Models\Ministry;
 use Illuminate\Http\Request;
 
-class MinitryController extends Controller
+class MinistryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class MinitryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Minitry  $minitry
+     * @param  \App\Models\Ministry  $ministry
      * @return \Illuminate\Http\Response
      */
-    public function show(Minitry $minitry)
+    public function show(Ministry $ministry)
     {
         //
     }
@@ -52,10 +52,10 @@ class MinitryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Minitry  $minitry
+     * @param  \App\Models\Ministry  $ministry
      * @return \Illuminate\Http\Response
      */
-    public function edit(Minitry $minitry)
+    public function edit(Ministry $ministry)
     {
         //
     }
@@ -64,10 +64,10 @@ class MinitryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Minitry  $minitry
+     * @param  \App\Models\Ministry  $ministry
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Minitry $minitry)
+    public function update(Request $request, Ministry $ministry)
     {
         //
     }
@@ -75,10 +75,10 @@ class MinitryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Minitry  $minitry
+     * @param  \App\Models\Ministry  $ministry
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Minitry $minitry)
+    public function destroy(Ministry $ministry)
     {
         //
     }
