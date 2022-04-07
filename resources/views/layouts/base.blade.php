@@ -27,6 +27,7 @@
         <!-- Theme Styles -->
         <link href="{{ asset("static/css/main.min.css") }}" rel="stylesheet">
         <link href="{{ asset("static/css/custom.css") }}" rel="stylesheet">
+        @yield('extra_css')
 
         {{-- <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/neptune.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/neptune.png" /> --}}
@@ -46,7 +47,22 @@
                 @include('layouts.search')
                 @include('layouts.app_header')
 
-                @yield('main_content')
+                <div class="app-content">
+                    <div class="content-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="page-description mb-0 p-0">
+                                        <h1>@yield('page_title')</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @yield('main_content')
+
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -57,10 +73,8 @@
     <script src="{{ asset("static/plugins/jquery/jquery-3.5.1.min.js") }}"></script>
     <script src="{{ asset("static/plugins/bootstrap/js/bootstrap.min.js") }}"></script>
     <script src="{{ asset("static/plugins/perfectscroll/perfect-scrollbar.min.js") }}"></script>
-    {{-- <script src="{{ asset("static/plugins/pace/pace.min.js") }}"></script> --}}
-    {{-- <script src="{{ asset("static/plugins/apexcharts/apexcharts.min.js") }}"></script> --}}
     <script src="{{ asset("static/js/main.min.js") }}"></script>
     <script src="{{ asset("static/js/custom.js") }}"></script>
-    {{-- <script src="{{ asset("static/js/pages/dashboard.js") }}"></script> --}}
+    @yield('extra_js')
 
 </html>

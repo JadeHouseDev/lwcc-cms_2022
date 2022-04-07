@@ -17,7 +17,11 @@ class MemberInfoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'member_id' => $this->faker->randomNumber(8) ,
+            'dob' => $this->faker->date ,
+            'residential_address' => $this->faker->streetAddress ,
+            'occupation' => $this->faker->jobTitle ,
+            'comment' => $this->faker->text(30) ,
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MemberInfo;
 use App\Models\MemberMaster;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,10 @@ class MemberMasterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(MemberMaster $members)
     {
-        //
+        $members = MemberMaster::with('member_info')->paginate(100);
+        return view('members.index')->with(['members'=>$members]);
     }
 
     /**

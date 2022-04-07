@@ -11,4 +11,9 @@ class MemberInfo extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
+
+    public function member()
+    {
+        return $this->belongsTo(MemberMaster::class, 'member_id', 'member_id');
+    }
 }

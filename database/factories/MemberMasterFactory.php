@@ -17,7 +17,9 @@ class MemberMasterFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'member_id' => $this->faker->randomNumber(8),
+            'member_other_names' => $this->faker->firstName,
+            'member_surname' => $this->faker->lastName
         ];
     }
 }

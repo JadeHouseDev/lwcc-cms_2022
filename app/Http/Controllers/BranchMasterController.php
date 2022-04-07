@@ -14,7 +14,8 @@ class BranchMasterController extends Controller
      */
     public function index()
     {
-        //
+        $branches = BranchMaster::paginate(100);
+        return view('branches.index')->with(['branches'=>$branches]);
     }
 
     /**

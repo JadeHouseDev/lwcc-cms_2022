@@ -17,7 +17,10 @@ class BranchMasterFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'branch_id' => $this->faker->randomNumber(8) ,
+            'name' => $this->faker->name ,
+            'location' => $this->faker->city ,
+            'phone' => $this->faker->phoneNumber() ,
         ];
     }
 }
