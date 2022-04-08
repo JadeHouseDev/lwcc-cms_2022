@@ -11,7 +11,6 @@
                         <th class="font-weight-bold">Phone</th>
                         <th class="font-weight-bold">Location</th>
                         <th class="font-weight-bold"></th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -22,9 +21,9 @@
                             <td>{{ $branch->phone ?? "N / A" }}</td>
                             <td>{{ $branch->location ?? "" }}</td>
                             <td style="min-width: 200px;">
-                                <button class="btn btn-sm btn-success">View</button>
-                                <button class="btn btn-sm btn-warning">Edit</button>
-                                <button class="btn btn-sm btn-danger">Disable</button>
+                                <a href="{{ route('branches.show', ['branch'=>$branch->branch_id]) }}" class="btn btn-sm btn-success">View</a>
+                                <a href="{{ route('branches.edit', ['branch'=>$branch->branch_id]) }}" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="{{ route('branches.show', ['branch'=>$branch->branch_id]) }}" class="btn btn-sm btn-danger">Disable</a>
                             </td>
                         </tr>
                     @endforeach

@@ -6,23 +6,21 @@
 @section('main_content')
     <div class="row">
         <div class="col">
-            @if ($branches ?? "")
+           @if ($branches ?? "")
                 @include('branches._branches', ['branches'=>$branches])
             @else
                 <h3>Nothing to display</h3>
             @endif
         </div>
     </div>
+
+    @include('branches._add_branch_modal')
+
 @endsection
 
-@include('branches._add_branch_modal')
 
 @section('extra_css')
-    <style>
-        label {
-            display: inline-flex;
-        }
-    </style>
+
 @endsection
 
 

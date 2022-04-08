@@ -1,7 +1,8 @@
 
 <div class="card">
     <div class="card-body">
-        <div class="table-responsive">
+        <a href="" type="button" class="float-right btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#add_member_modal">Add New</a>
+        <div class="table-responsive mt-4">
             <table id="dt_table" class="display" style="width:100%">
                 <thead>
                     <tr>

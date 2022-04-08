@@ -13,6 +13,9 @@
             @endif
         </div>
     </div>
+
+    @include('members._add_member_modal')
+
 @endsection
 
 

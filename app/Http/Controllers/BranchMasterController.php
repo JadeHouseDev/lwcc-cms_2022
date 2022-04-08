@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BranchMaster;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class BranchMasterController extends Controller
 {
@@ -14,7 +15,7 @@ class BranchMasterController extends Controller
      */
     public function index()
     {
-        $branches = BranchMaster::paginate(100);
+        $branches = BranchMaster::orderBy('created_at', 'desc')->paginate(100);
         return view('branches.index')->with(['branches'=>$branches]);
     }
 
@@ -36,7 +37,23 @@ class BranchMasterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Log::info("########################### STORING BRANCH RECORD");
+        $validated = $request->validate([
+            'name' => 'required | string | min:3',
+            'location' => 'required | string | min:3',
+            'phone' => 'required | string | min:10',
+        ]);
+
+        // APPEND AUTO GENERATED ID TO VALIDATED DATA
+        $validated['branch_id'] = $this->generate_token();
+
+        $branch = BranchMaster::create($validated);
+
+        if ($branch) {
+            return redirect()->route('branches.index')->with('success', $branch->name." Branch Saved Successfully");
+        } else {
+            return redirect()->route('branches.index')->with('error', $branch->name." Branch Could Not Be Created");
+        }
     }
 
     /**
