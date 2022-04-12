@@ -17,7 +17,10 @@ class MinistryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'ministry_id' => $this->faker->randomNumber(8) ,
+            'name' => $this->faker->firstName('male') . " Ministry" ,
+            'alias' => $this->faker->userName() ,
+            'type' => $this->faker->name() ,
         ];
     }
 }

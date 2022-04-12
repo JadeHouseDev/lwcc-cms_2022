@@ -14,7 +14,8 @@ class MinistryController extends Controller
      */
     public function index()
     {
-        //
+        $ministries = Ministry::orderByDesc('created_at')->paginate(100);
+        return view('ministries.index')->with(['ministries'=>$ministries]);
     }
 
     /**

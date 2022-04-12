@@ -19,16 +19,8 @@
             <li>
                 <a href="{{ route('members.index') }}"><i class="material-icons-two-tone">cloud_queue</i>Members</a>
             </li>
-            <li>
-                <a href="{{ route('branches.index') }}"><i class="material-icons-two-tone">calendar_today</i>Branches</a>
-            </li>
-            <li>
-                <a href="#"><i class="material-icons-two-tone">star</i>Ministries<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
-                <ul class="sub-menu">
-                    <li><a href="{{ route('ministries.index') }}">View All Ministries</a></li>
-                    <li><a href="{{ route('ministries.create') }}">Create New</a></li>
-                </ul>
-            </li>
+            <li><a href="{{ route('branches.index') }}"><i class="material-icons-two-tone">calendar_today</i>Branches</a></li>
+            <li><a href="{{ route('ministries.index') }}"><i class="material-icons-two-tone">star</i>Ministries</a></li>
 
             <li class="sidebar-title">
                 Finance
