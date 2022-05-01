@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BranchMember;
+use App\Models\ContributionType;
 use App\Models\MemberInfo;
 use App\Services\BaseService;
 use App\Models\MemberMaster;
@@ -104,9 +105,11 @@ class MemberMasterController extends Controller
      * @param  \App\Models\MemberMaster  $memberMaster
      * @return \Illuminate\Http\Response
      */
-    public function show(MemberMaster $memberMaster)
+    public function show($member_id)
     {
-        //
+        $cont_types = ContributionType::all(); //contribution_types
+        $member = MemberMaster::with(['member_info','contributions'])->where('member_id', $member_id)->first();
+        return view('members.show', compact('member', 'cont_types'));
     }
 
     /**

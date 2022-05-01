@@ -17,4 +17,9 @@ class MemberMaster extends Model
         return $this->hasOne(MemberInfo::class, 'member_id', 'member_id');
     }
 
+    public function contributions()
+    {
+        return $this->hasMany(MemberContribution::class, 'member_id', 'member_id')->orderByDesc('created_at');
+    }
+
 }

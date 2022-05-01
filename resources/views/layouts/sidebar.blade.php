@@ -25,7 +25,7 @@
             <li class="sidebar-title">
                 Finance
             </li>
-            <li><a href="{{ route('branches.index') }}"><i class="material-icons-two-tone">money</i>Member Contributions</a></li>
+            <li><a href="{{ route('member_contributions.index') }}"><i class="material-icons-two-tone">money</i>Member Contributions</a></li>
             <li><a href="{{ route('branches.index') }}"><i class="material-icons-two-tone">calendar_today</i>Branch Contributions</a></li>
 
             <li class="sidebar-title">

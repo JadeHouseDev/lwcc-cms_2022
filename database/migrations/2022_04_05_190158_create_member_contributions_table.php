@@ -17,9 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('contrib_id');
             $table->decimal('amount');
+            $table->date('date');
             $table->string('member_id', 20);
             $table->string('con_type_id', 20);
-            $table->integer('reprocess_count');
+            $table->integer('reprocess_count')->default(0);
+            $table->boolean('sms_sent')->default(0);
             $table->string('comment');
             $table->boolean('active_status')->default(true);
             $table->timestamps();
